@@ -1,4 +1,4 @@
-annotated-type
+annotated-types
 anyio
 asgiref
 boto3
