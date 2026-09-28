@@ -1,0 +1,36 @@
+{% load static %}
+<header class="site-header header-1">
+    <div class="header-top bg-dark-1 py-0">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 d-flex align-items-center justify-content-between text-white">
+            <div class="d-md-flex align-items-center call-info">
+              <div class="d-flex align-items-center">
+                <div class="text-white offer-text"><small><span>Welcome</span> !!</small> </div>
+              </div>
+            </div>
+            <div class="d-none d-md-flex align-items-center">
+              <div class="social-icons">
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item"><a class="text-white" href="https://www.instagram.com/thedealspot3"><i class="lab la-instagram"></i></a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="header-wrap">
+      <div class="container">
+        <div class="row"> 
+          <!--menu start-->
+          <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light"> <a class="navbar-brand logo" href="{% url 'home' %}"> <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="TheDealSpot"> </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            </nav>
+          </div>
+          <!--menu end--> 
+        </div>
+      </div>
+    </div>
+  </header>

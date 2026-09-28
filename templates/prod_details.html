@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}
+{{details.name|title}}
+{% endblock title %}
+{% block body %}
+{% load custom_tags %}
+<section class="bg-light py-6">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="h2 mb-0">{{details.name|title|truncatewords:5}}</h1>
+      </div>
+      <div class="col-md-6 mt-3 mt-md-0">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-md-end bg-transparent p-0 m-0">
+            <li class="breadcrumb-item"><a class="link-title" href="#">Home</a> </li>
+            <li class="breadcrumb-item"><a class="link-title" href="#">Shop</a></li>
+            <li class="breadcrumb-item active text-primary" aria-current="page">{{details.name|title|truncatewords:5}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- / .row -->
+  </div>
+  <!-- / .container -->
+</section>
+
+<!--hero section end--> 
+
+
+<!--body content start-->
+
+<div class="page-content">
+
+<!--product details start-->
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <ul id="imageGallery">
+          <li data-thumb="{{details.image1.url}}" data-src="{{details.image1}}">
+            <img class="img-fluid w-100" src="{{details.image1.url}}" alt="" />
+          </li>
+          <li data-thumb="{{details.image2.url}}" data-src="{{details.image2}}">
+            <img class="img-fluid w-100" src="{{details.image2.url}}" alt="" />
+          </li>
+          {% if details.image3 %}
+          <li data-thumb="{{details.image3.url}}" data-src="{{details.image3}}">
+            <img class="img-fluid w-100" src="{{details.image3.url}}" alt="" />
+          </li>
+          {% endif %}
+          {% if details.image4 %}
+          <li data-thumb="{{details.image4.url}}" data-src="{{details.image4}}">
+            <img class="img-fluid w-100" src="{{details.image4.url}}" alt="" />
+          </li>
+          {% endif %}
+          {% if details.video %}
+          <video data-thumb="{{ details.image1.url }}" class="img-fluid mb-4" controls preload="metadata" controls preload="metadata" autoplay muted loop playsinline>
+            <source src="{{details.video.url}}" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+        <div class="product-details">
+          <h1 class="h4 mb-0 font-w-6">{{details.name|title}}</h1>
+          <div class="star-rating mb-4"><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+          </div> <span class="product-price h5 text-pink">Rs.  {{sell_price}} <del class="text-muted h6">Rs. {{price}}</del></span>
+          <ul class="list-unstyled my-3">
+            <li><small>Discount: <span class="text-red"> <strong> {{details.discount}}%</strong></span> </small>
+            </li>
+            <li><small>Availibility: <span class="text-green"> In Stock</span> </small>
+            </li>
+          </ul>
+          <div class="d-sm-flex align-items-center mb-5">
+            <div class="d-flex align-items-center mr-sm-4">
+            </div>
+          </div>
+          <div class="d-sm-flex align-items-center mt-5">
+            <a href="{{details.affilate_url}}" class="btn btn-primary btn-animated mr-sm-3 mb-3 mb-sm-0"><i class="las la-shopping-cart mr-2"></i> Buy Now </a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--product details end-->
+
+
+<!--tab start-->
+
+<section class="pt-0 pb-8">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tab product-tab">
+          <!-- Nav tabs -->
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist"> <a class="nav-item nav-link active ml-0" id="nav-tab1" data-toggle="tab" href="#tab3-1" role="tab" aria-selected="true">Description</a>
+            </div>
+          </nav>
+          <!-- Tab panes -->
+          <div class="tab-content pt-5 p-0">
+            <div role="tabpanel" class="tab-pane fade show active" id="tab3-1">
+              <div class="row align-items-center">
+                
+                <div class="col-md-12">
+                  <p>{{details.desc}}</p> 
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+{% endblock body %}
