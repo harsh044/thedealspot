@@ -42,10 +42,10 @@ StrEnum
 supabase
 supabase-auth
 supabase-functions
-typing-inspect
+typing-inspection
 typing_extensions
 tzdata
-urllib
+urllib3
 websockets
 whitenoise
 yarl
