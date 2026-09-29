@@ -25,7 +25,7 @@ def handler500(request):
     return render(request, '500.html', status=500)
     
 def home(request):
-    products = TheDealSpot.objects.all()
+    products = TheDealSpot.objects.all().order_by("-created_at")
     context = {'prod':products}
     return render(request, 'index.html', context)
 
