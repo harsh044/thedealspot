@@ -24,6 +24,6 @@ admin.site.site_title = "TheDealSpot Admin"
 admin.site.index_title = "Welcome to TheDealSpot Admin"
 
 urlpatterns = [
-    path('thedealspot/', admin.site.urls),
+    path('thedealspot', admin.site.urls),
     path('', include('shirts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
