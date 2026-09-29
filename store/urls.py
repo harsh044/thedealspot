@@ -18,7 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+admin.site.site_header = "TheDealSpot Administration"
+admin.site.site_title = "TheDealSpot Admin"
+admin.site.index_title = "Welcome to TheDealSpot Admin"
+
 urlpatterns = [
-    path('thedealspot_admin/', admin.site.urls),
+    path('thedealspot/', admin.site.urls),
     path('', include('shirts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
