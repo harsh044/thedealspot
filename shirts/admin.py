@@ -9,15 +9,4 @@ class SizeVariantConfig(admin.TabularInline):
 class TshirtConfig(admin.ModelAdmin):
     inlines = [SizeVariantConfig]    
 
-
-
 admin.site.register(TheDealSpot, TshirtConfig)
-admin.site.register(Occassion)
-admin.site.register(Sleeve_type)
-admin.site.register(Neck_type)
-admin.site.register(Ideal_for)
-admin.site.register(brand)
-admin.site.register(color)
-admin.site.register(Payment)
-admin.site.register(order)
-admin.site.register(order_item)
